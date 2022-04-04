@@ -1,8 +1,9 @@
 {
-  "name": "apollo-graphql-server",
+  "name": "new-graphql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^3.6.5",
+    "apollo-server": "^3.6.7",
     "graphql": "^16.3.0"
   }
 }
