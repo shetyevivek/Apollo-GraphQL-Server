@@ -4,31 +4,21 @@ import {car} from "./cardata.js";
 // These are called properties
 // Scalar types: Int, Float, String, Boolean
 const typeDefs = gql`
-directive @cacheControl(
-  maxAge: Int,
-  scope: CacheControlScope
-) on OBJECT | FIELD | FIELD_DEFINITION
-
-enum CacheControlScope {
-  PUBLIC
-  PRIVATE
-}
-
   type Query {
-    CarYear: [Info] @cacheControl(maxAge: 2592000)
-    cars(year: String!): Info @cacheControl(maxAge: 2592000)
+    CarYear: [Info]
+    cars(year: String!): Info
   }
-  type Info @cacheControl(maxAge: 2592000) {
-    year: String @cacheControl(maxAge: 2592000)
-    CarMake: [Details] @cacheControl(maxAge: 2592000)
-    get_car_models(make: String!): Details @cacheControl(maxAge: 2592000)
+  type Info {
+    year: String
+    CarMake: [Details]
+    get_car_models(make: String!): Details
   }
-  type Details @cacheControl(maxAge: 2592000) {
-    make: String @cacheControl(maxAge: 2592000)
-    CarModel: [ModelData] @cacheControl(maxAge: 2592000)
+  type Details {
+    make: String
+    CarModel: [ModelData]
   }
-  type ModelData @cacheControl(maxAge: 2592000) {
-    model: String @cacheControl(maxAge: 2592000)
+  type ModelData {
+    model: String
   }
 `;
 
